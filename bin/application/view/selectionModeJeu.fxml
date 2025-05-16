@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="40.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#b85839" height="570.0" layoutX="102.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="500.0" />
+      <Button fx:id="boutonHumain_Humain" layoutX="251.0" layoutY="530.0" mnemonicParsing="false" onAction="#clicBoutonHumain_Humain" prefHeight="76.0" prefWidth="202.0" style="-fx-background-color: #13525B; -fx-border-color: #000000; -fx-border-radius: 3; -fx-border-width: 2;" text="VS" textFill="#fbe3ad">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="62.0" fitWidth="50.0" layoutX="263.0" layoutY="538.0">
+         <image>
+            <Image url="@../../../../../Downloads/klipartz.com%20(22).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="50.0" layoutX="389.0" layoutY="538.0">
+         <image>
+            <Image url="@../../../../../Downloads/klipartz.com%20(22).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="boutonHumain_Robot" layoutX="251.0" layoutY="416.0" mnemonicParsing="false" onAction="#cliquerBoutonHumain_Robot" prefHeight="76.0" prefWidth="202.0" style="-fx-background-color: #13525B; -fx-border-color: #000000; -fx-border-radius: 3; -fx-border-width: 2;" text="VS" textFill="#fbe3ad">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="62.0" fitWidth="50.0" layoutX="263.0" layoutY="424.0">
+         <image>
+            <Image url="@../../../../../Downloads/klipartz.com%20(22).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="60.0" layoutX="386.0" layoutY="423.0">
+         <image>
+            <Image url="@../../../../../Downloads/klipartz.com%20(23).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="boutonParametre" layoutX="377.0" layoutY="115.0" mnemonicParsing="false" onAction="#cliquerParametre" prefHeight="70.0" prefWidth="202.0" style="-fx-background-color: #7F2148; -fx-border-color: #000000; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15;" text="Paramètres" textFill="#fbe3ad">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="45.0" arcWidth="45.0" fill="#c1694d" height="123.0" layoutX="133.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="438.0" />
+      <Text fill="#fbe3ad" layoutX="164.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisissez un mode de jeu">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
