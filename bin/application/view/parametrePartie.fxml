@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ComboBox?>
@@ -9,6 +10,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;"
             xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ParametresController">
+
     <children>
         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="68.0" layoutY="40.0"
                    stroke="BLACK" strokeType="INSIDE" width="560.0" />
@@ -21,6 +23,8 @@
                 <Font size="20.0" />
             </font>
         </Text>
+        <ComboBox fx:id="comboBoxTheme" layoutX="387.0" layoutY="276.0" prefWidth="150.0" promptText="Thème sombre" />
+
         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#c1694d" height="65.0" layoutX="148.0" layoutY="340.0"
                    stroke="BLACK" strokeType="INSIDE" width="400.0" />
         <Text fill="#fbe3ad" layoutX="174.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0"
@@ -29,6 +33,8 @@
                 <Font size="20.0" />
             </font>
         </Text>
+        <ComboBox fx:id="comboBoxCouleurElements" layoutX="387.0" layoutY="350.0" prefWidth="150.0" promptText="Rouge" />
+
         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#c1694d" height="65.0" layoutX="148.0" layoutY="421.0"
                    stroke="BLACK" strokeType="INSIDE" width="400.0" />
         <Text fill="#fbe3ad" layoutX="174.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0"
@@ -37,6 +43,8 @@
                 <Font size="20.0" />
             </font>
         </Text>
+        <ComboBox fx:id="comboBoxImageFond" layoutX="387.0" layoutY="431.0" prefWidth="150.0" promptText="Image 1" />
+
         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#c1694d" height="65.0" layoutX="148.0" layoutY="503.0"
                    stroke="BLACK" strokeType="INSIDE" width="400.0" />
         <Text fill="#fbe3ad" layoutX="174.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0"
@@ -45,6 +53,8 @@
                 <Font size="20.0" />
             </font>
         </Text>
+        <ComboBox fx:id="comboBoxFormeElements" layoutX="387.0" layoutY="513.0" prefWidth="150.0" promptText="Carré" />
+
         <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#c1694d" height="65.0" layoutX="148.0" layoutY="588.0"
                    stroke="BLACK" strokeType="INSIDE" width="400.0" />
         <Text fill="#fbe3ad" layoutX="174.0" layoutY="613.0" strokeType="OUTSIDE" strokeWidth="0.0"
@@ -53,14 +63,5 @@
                 <Font size="20.0" />
             </font>
         </Text>
-        <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0"
-                   stroke="BLACK" strokeType="INSIDE" width="450.0" />
-        <Text fill="#fbe3ad" layoutX="148.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Paramètres de la partie" wrappingWidth="420.6275634765625">
-            <font>
-                <Font size="38.0" />
-            </font>
-        </Text>
-        <ComboBox layoutX="387.0" layoutY="276.0" prefWidth="150.0" promptText="Theme sombre" />
     </children>
 </AnchorPane>

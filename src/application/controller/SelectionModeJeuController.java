@@ -1,22 +1,33 @@
-//package application.controller;
-//
-//import java.net.URL;
-//import javafx.event.ActionEvent;
-//import javafx.fxml.FXML;
-//import javafx.fxml.Initializable;
-//import javafx.scene.control.Button;
-//import javafx.scene.control.Label;
-//import javafx.scene.layout.AnchorPane;
-//
-//
-//public class SelectionModeJeuController implements Initializable {
-//    
-//    @FXML
-//    private Button btnJoueurVsJoueur;
-//    
-//    @FXML
-//    private Button btnJoueurVsIA;
-//    
-//    @FXML
-//    private Button btnParametres;
-//}
+
+package application.controller;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+
+public class SelectionModeJeuController implements Initializable {
+
+    @FXML
+    private Button boutonHumain_Humain;
+
+    @FXML
+    private Button boutonParametre;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    @FXML
+    private void clicBoutonHumain_Humain(ActionEvent event) {
+        System.out.println("Bouton VS cliqué !");
+    }
+
+    @FXML
+    private void cliquerParametre(ActionEvent event) {
+        System.out.println("Bouton Paramètres cliqué !");
+    }
+}

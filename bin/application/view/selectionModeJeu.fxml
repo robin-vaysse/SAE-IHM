@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SelectionModeJeuControlleur">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SelectionModeJeuController">
    <children>
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="40.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#b85839" height="570.0" layoutX="102.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="500.0" />
@@ -17,31 +17,6 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <ImageView fitHeight="62.0" fitWidth="50.0" layoutX="263.0" layoutY="538.0">
-         <image>
-            <Image url="@../../../../../Downloads/klipartz.com%20(22).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="62.0" fitWidth="50.0" layoutX="389.0" layoutY="538.0">
-         <image>
-            <Image url="@../../../../../Downloads/klipartz.com%20(22).png" />
-         </image>
-      </ImageView>
-      <Button fx:id="boutonHumain_Robot" layoutX="251.0" layoutY="416.0" mnemonicParsing="false" onAction="#cliquerBoutonHumain_Robot" prefHeight="76.0" prefWidth="202.0" style="-fx-background-color: #13525B; -fx-border-color: #000000; -fx-border-radius: 3; -fx-border-width: 2;" text="VS" textFill="#fbe3ad">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="62.0" fitWidth="50.0" layoutX="263.0" layoutY="424.0">
-         <image>
-            <Image url="@../../../../../Downloads/klipartz.com%20(22).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="62.0" fitWidth="60.0" layoutX="386.0" layoutY="423.0">
-         <image>
-            <Image url="@../../../../../Downloads/klipartz.com%20(23).png" />
-         </image>
-      </ImageView>
       <Button fx:id="boutonParametre" layoutX="377.0" layoutY="115.0" mnemonicParsing="false" onAction="#cliquerParametre" prefHeight="70.0" prefWidth="202.0" style="-fx-background-color: #7F2148; -fx-border-color: #000000; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15;" text="Paramètres" textFill="#fbe3ad">
          <font>
             <Font size="28.0" />
