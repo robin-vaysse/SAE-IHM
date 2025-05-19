@@ -1,18 +1,11 @@
 package application.controller;
 
-import java.io.IOException;
-import java.net.URL;
+import application.JeuDuQuinzeMain;
 import application.model.JeuModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 public class JeuController {
 	
@@ -20,7 +13,6 @@ public class JeuController {
 	    
 	    public void initialize() {
 	    	model = new JeuModel();
-	    	//init de l'interface
 	    }
 
 	    @FXML
@@ -86,15 +78,50 @@ public class JeuController {
 	    private void cliquerBouton2(ActionEvent event) {
 	        
 	    }
+	    
+	    @FXML
+	    private void cliquerBouton3(ActionEvent event) {
+	        
+	    }
+	    
+	    @FXML
+	    private void cliquerBouton4(ActionEvent event) {
+	        
+	    }
+	    
+	    @FXML
+	    private void cliquerBouton5(ActionEvent event) {
+	        
+	    }
+	    
+	    @FXML
+	    private void cliquerBouton6(ActionEvent event) {
+	        
+	    }
+	    
+	    @FXML
+	    private void cliquerBouton7(ActionEvent event) {
+	        
+	    }
+	    
+	    @FXML
+	    private void cliquerBouton8(ActionEvent event) {
+	        
+	    }
+	    
+	    @FXML
+	    private void cliquerBouton9(ActionEvent event) {
+	        
+	    }
 
 	    @FXML
 	    private void cliquerBoutonMenu(ActionEvent event) {
-
+            	JeuDuQuinzeMain.activerFenetreMenu();
 	    }
 
 	    @FXML
 	    private void cliquerBoutonSauvegarder(ActionEvent event) {
-
+	    	//JeuDuQuinzeMain.activerFenetreSauvegarde();
 	    }
 
 	    @FXML
@@ -115,7 +142,6 @@ public class JeuController {
 	    @FXML
 	    private void metAJourInterface() {
 	    	// Met à jour l'interface graphique
-	    }
-	    
+	    }    
 	    
 }

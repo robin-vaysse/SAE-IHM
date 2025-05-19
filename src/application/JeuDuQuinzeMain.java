@@ -1,28 +1,136 @@
+
 package application;
-	
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.Parent;
+import java.io.IOException;
 
-
+/**
+ * Classe principale de l'application "Jeu du Quinze".
+ * Gère les différentes scènes et la fenêtre principale.
+ */
 public class JeuDuQuinzeMain extends Application {
-	@Override
-	public void start(Stage primaryStage) {
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/application/view/menu.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
+
+    /** Scène principale de l'application */
+    private static Scene sceneAccueil;
+
+    /** Scène permettant de gérer le jeu */
+    private static Scene sceneJeu;
+
+    /** Scène permettant de gérer la page des paramètres */
+    private static Scene sceneParametres;
+
+    /** Scène permettant de gérer la page du menu */
+    private static Scene sceneMenu;
+
+    /** Scène permettant de gérer la page du choix du jeu */
+    private static Scene sceneMode;
+
+    /**
+     * Fenêtre principale de l'application.
+     * La scène qui lui est associée sera modifiée en fonction des
+     * clics de l'utilisateur sur les boutons.
+     */
+    private static Stage fenetreMenu;
+
+    /**
+     * Permet de modifier la scène de la fenêtre principale
+     * pour qu'elle devienne celle de jeu.
+     */
+    public static void activerFenetreJeu() {
+        fenetreMenu.setScene(sceneJeu);
+    }
+
+    /**
+     * Permet de modifier la scène de la fenêtre principale
+     * pour qu'elle devienne celle des paramètres.
+     */
+    public static void activerFenetreParametres() {
+        fenetreMenu.setScene(sceneParametres);
+    }
+
+    /**
+     * Permet de modifier la scène de la fenêtre principale
+     * pour qu'elle devienne celle du mode de jeu.
+     */
+    public static void activerFenetreMode() {
+        fenetreMenu.setScene(sceneMode);
+    }
+
+    /**
+     * Permet de modifier la scène de la fenêtre principale
+     * pour qu'elle devienne celle du menu.
+     */
+    public static void activerFenetreMenu() {
+        fenetreMenu.setScene(sceneMenu);
+    }
+
+    /**
+     * Permet de modifier la scène de la fenêtre principale
+     * pour qu'elle devienne la scène principale, celle qui permet d'accéder au jeu.
+     */
+    public static void activerPrincipale() {
+        fenetreMenu.setScene(sceneAccueil);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        try {
+        	fenetreMenu = primaryStage;
+            
+            System.out.println(getClass().getResource("/application/view/menu.fxml"));
+            System.out.println(getClass().getResource("/application/view/jeu.fxml"));
+            System.out.println(getClass().getResource("/application/view/parametrePartie.fxml"));
+            System.out.println(getClass().getResource("/application/view/selectionModeJeu.fxml"));
+            System.out.println(getClass().getResource("/application/view/pause.fxml"));
+            //System.out.println(getClass().getResource("/application/view/commentJouer.fxml"));
+
+            /** Chargement de la scène d'accueil */
+            Parent accueilRoot = FXMLLoader.load(getClass().getResource("/application/view/menu.fxml"));
+            sceneAccueil = new Scene(accueilRoot, 680, 750);
+
+            /** Chargement de la scène de jeu */
+            Parent jeuRoot = FXMLLoader.load(getClass().getResource("/application/view/jeu.fxml"));
+            sceneJeu = new Scene(jeuRoot, 680, 750);
+            
+            /** Chargement de la scène de paramétrage */
+//            Parent paramRoot = FXMLLoader.load(getClass().getResource("/application/view/parametrePartie.fxml"));
+//            sceneParametres = new Scene(paramRoot, 680, 750);
+            
+            /** Chargement de la scène de mode de jeu */
+            Parent modeRoot = FXMLLoader.load(getClass().getResource("/application/view/selectionModeJeu.fxml"));
+            sceneMode = new Scene(modeRoot, 680, 750);
+            
+            /** Chargement de la scène de menu */
+            Parent pauseRoot = FXMLLoader.load(getClass().getResource("/application/view/pause.fxml"));
+            sceneMenu = new Scene(pauseRoot, 680, 750);
+
+            // Chargement de la scène des modes de jeu
+            //Parent modeRoot = FXMLLoader.load(getClass().getResource("/application/view/commentJouer.fxml"));
+            //sceneMode = new Scene(modeRoot, 500, 700);
+
+            /** Configuration de la fenêtre principale */
             primaryStage.setTitle("Jeu du Quinze");
-            primaryStage.setResizable(false);
+            primaryStage.setScene(sceneAccueil);
+            primaryStage.setWidth(680);
+            primaryStage.setHeight(750);
             primaryStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
+
+        } catch (Exception e) {
+            System.err.println("Erreur lors du chargement des ressources : " + e.getMessage());
+            e.printStackTrace();
+        }
+     }
+        
+
+    /**
+     * Programme principal.
+     * @param args non utilisé
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
