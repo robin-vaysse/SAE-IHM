@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.JeuController">
    <children>
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="320.0" layoutX="180.0" layoutY="253.0" stroke="BLACK" strokeType="INSIDE" width="320.0" />
       <GridPane layoutX="204.0" layoutY="278.0" maxHeight="270.0" maxWidth="270.0" prefHeight="270.0" prefWidth="270.0">
