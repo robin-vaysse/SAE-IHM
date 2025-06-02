@@ -1,0 +1,69 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+/* Styles pour la sélection du mode de jeu */
+
+/* Conteneur principal */
+.main-container {
+    -fx-background-color: #613D68;
+}
+
+.anchor-pane {
+    -fx-background-color: #613D68;
+}
+
+/* Rectangles de fond */
+.background-rectangle-outer {
+    -fx-fill: #895793;
+    -fx-stroke: black;
+    -fx-stroke-type: inside;
+}
+
+.background-rectangle-inner {
+    -fx-fill: #b85839;
+    -fx-stroke: black;
+    -fx-stroke-type: inside;
+}
+
+.title-background {
+    -fx-fill: #c1694d;
+    -fx-stroke: black;
+    -fx-stroke-type: inside;
+    -fx-stroke-width: 2;
+}
+
+/* Boutons */
+.bouton-parametre {
+    -fx-background-color: #7F2148;
+    -fx-border-color: #000000;
+    -fx-border-width: 2;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-text-fill: #fbe3ad;
+    -fx-font-size: 28px;
+}
+
+.bouton-retour {
+    -fx-background-color: #c1694d;
+    -fx-background-radius: 20;
+    -fx-border-color: #000000;
+    -fx-border-radius: 20;
+    -fx-text-fill: #fbe3ad;
+    -fx-font-size: 37px;
+}
+
+.bouton-mode-jeu {
+    -fx-background-color: #13525B;
+    -fx-border-color: #000000;
+    -fx-border-radius: 3;
+    -fx-border-width: 2;
+    -fx-text-fill: #fbe3ad;
+    -fx-font-size: 24px;
+}
+
+/* Texte */
+.titre-principal {
+    -fx-fill: #fbe3ad;
+    -fx-stroke-type: outside;
+    -fx-stroke-width: 0;
+    -fx-font-size: 32px;
+}
+

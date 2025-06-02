@@ -1,0 +1,1830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="mainPane" style="-fx-background-color: #613D68;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CommentJouerController">
+   <AnchorPane fx:id="page1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+           <Label layoutX="151.0" layoutY="281.0" text="Configuration du plateau du jeu de Quinze" textFill="#fbe3ad">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+      
+          <!-- Flèche droite -->
+          <Button fx:id="nextButton" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+      
+          <!-- Flèche gauche -->
+          <Button fx:id="prevButton" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Button fx:id="boutonRetourArriere2" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page2" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton1" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton1" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10; -fx-border-color: #F34E47; -fx-border-width: 3; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="138.0" layoutY="248.0" prefHeight="108.0" prefWidth="403.0" text="Supposons que le tour de jeu soit au joueur qui a les cases rouges. Il sélectionne et valide la case 5." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere3" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton11" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton11" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10; -fx-border-color: #F34E47; -fx-border-width: 3; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="138.0" layoutY="248.0" prefHeight="108.0" prefWidth="403.0" text="Supposons que le tour de jeu soit au joueur qui a les cases rouges. Il sélectionne et valide la case 5." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere4" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton111" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton111" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10; -fx-background-color: #4A93C8;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="138.0" layoutY="248.0" prefHeight="108.0" prefWidth="403.0" text="Le joueur bleu choisi la case 4. Puis de nouveau le joueur rouge choisi la case 8." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere5" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton1111" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton1111" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-radius: 10; -fx-background-color: #4A93C8;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="150.0" layoutY="245.0" prefHeight="135.0" prefWidth="378.0" text="Le joueur bleu choisi la case 7. Enfin, le joueur rouge choisi la case 2. Puisque le score additionné de ses cases est égal a 15, le joueur Rouge gagne la partie." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere6" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Label layoutX="256.0" layoutY="287.0" text="Deuxième exemple" textFill="#fbe3ad">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="nextButton2" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton2" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="28.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Button fx:id="boutonRetourArriere7" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton1112" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton1112" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10; -fx-background-color: #4A93C8;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="138.0" layoutY="248.0" prefHeight="108.0" prefWidth="403.0" text="Reprenons la configuration précédente, le joueur bleu choisi la case 2." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere8" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton11121" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton11121" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10; -fx-background-color: #4A93C8;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="141.0" layoutY="248.0" prefHeight="135.0" prefWidth="403.0" text="Le joueur rouge ne peut plus faire 15 en choisissant une nouvelle case.  Il choisi donc de jouer en 9 pour empêcher le joueur bleu de jouer." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere9" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton111211" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton111211" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10; -fx-background-color: #4A93C8;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="174.0" layoutY="245.0" prefHeight="135.0" prefWidth="330.0" text="Puis le joueur bleu choisi sa troisième case en 1." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere10" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton1112111" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton1112111" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10; -fx-background-color: #4A93C8;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="163.0" layoutY="228.0" prefHeight="66.0" prefWidth="378.0" text="Ici, les 6 cases ont été choisies et aucun des joueurs n'a obtenu 15." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Label layoutX="162.0" layoutY="298.0" prefHeight="94.0" prefWidth="414.0" text="Dans ce cas là, les joueurs vont pouvoir changer de cases, le tout dans l'objectif d'obtenir 15" textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere11" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton11121111" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton11121111" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="163.0" layoutY="228.0" prefHeight="66.0" prefWidth="378.0" text="Une case rouge est déplacée de 5 en 6." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Label layoutX="163.0" layoutY="276.0" prefHeight="62.0" prefWidth="414.0" text="Une case bleue est déplacée de 4 en 7." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere12" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page12" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton111211111" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton111211111" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="163.0" layoutY="228.0" prefHeight="66.0" prefWidth="378.0" text="Une case rouge est déplacée de 6 en 3." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Label layoutX="163.0" layoutY="276.0" prefHeight="62.0" prefWidth="414.0" text="Une case bleue est déplacée de 8 en 5." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere13" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page13" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;" visible="false">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton1112111111" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton1112111111" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="163.0" layoutY="228.0" prefHeight="66.0" prefWidth="378.0" text="Une case rouge est déplacée de 6 en 3." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Label layoutX="163.0" layoutY="276.0" prefHeight="62.0" prefWidth="414.0" text="Une case bleue est déplacée de 1 en 4." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere14" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page14" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton11121111111" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton11121111111" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="163.0" layoutY="228.0" prefHeight="66.0" prefWidth="378.0" text="Une case rouge est déplacée de 5 en 6." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Label layoutX="163.0" layoutY="276.0" prefHeight="62.0" prefWidth="414.0" text="Une case bleue est déplacée de 4 en 5." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere15" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="page15" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;">
+      <children>
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="60.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="560.0" />
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#b85839" height="450.0" layoutX="115.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="118.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+         <Text fill="#fbe3ad" layoutX="127.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment Jouer ?" textAlignment="CENTER" wrappingWidth="450.0">
+            <font>
+               <Font size="38.0" />
+            </font>
+         </Text>
+         <Button fx:id="nextButton111211111111" layoutX="599.0" layoutY="345.0" onAction="#handleNext" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="→" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Button fx:id="prevButton111211111111" layoutX="30.0" layoutY="356.0" onAction="#handlePrev" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c1694d; -fx-opacity: 85%;" text="←" textFill="#fbe3ad">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#142c45" height="250.0" layoutX="215.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+         <GridPane layoutX="244.0" layoutY="417.0" maxHeight="213.0" maxWidth="206.0" prefHeight="206.0" prefWidth="191.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.33" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints maxHeight="60.8" minHeight="10.0" percentHeight="33.33" prefHeight="31.200018310546874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="29.599981689453124" minHeight="0.0" percentHeight="33.33" prefHeight="29.599981689453124" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" percentHeight="33.33" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="1" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="2" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="3" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="4" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EFAB34; -fx-background-radius: 10;" text="7" textAlignment="CENTER" textFill="#162d46" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10; -fx-border-radius: 10;" text="5" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #4A93C8; -fx-background-radius: 10;" text="8" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="6" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: #EA5253; -fx-background-radius: 10;" text="9" textAlignment="CENTER" textFill="#162d46" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="26.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                  </GridPane.margin>
+               </Button>
+            </children>
+         </GridPane>
+         <Label layoutX="163.0" layoutY="251.0" prefHeight="66.0" prefWidth="378.0" text="La partie s'arrête, le joueur bleu gagne la partie puisqu'il a obtenu la somme de 15." textFill="#fbe3ad" wrapText="true">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="boutonRetourArriere" layoutX="72.0" layoutY="55.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #c1694d; -fx-background-radius: 20; -fx-border-color: #000000; -fx-border-radius: 20;" text="🔙" textFill="#fbe3ad">
+            <font>
+               <Font size="37.0" />
+            </font>
+         </Button>
+      </children>
+   </AnchorPane>
+</StackPane>

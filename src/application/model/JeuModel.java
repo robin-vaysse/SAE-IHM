@@ -1,17 +1,20 @@
 package application.model;
 
+import application.controller.JeuController;
+
 public class JeuModel {
-	private int [][] grille;
 	private int scoreJoueur1;
 	private int scoreJoueur2;
 	private boolean tourJoueur1;
+	private int pionJoueur1 = 0;
+	private int pionJoueur2 = 0;
+	private int verifierScore = 0;
 	
 	public JeuModel() {
-		// TODO initialisation de la grille et des scores
-	}
-	
-	public void choisirCase(int x, int y) {
-		// TODO choisir une case
+
+	    scoreJoueur1 = 0;
+	    scoreJoueur2 = 0;
+	    tourJoueur1 = true;
 	}
 	
 	public void changerTour() {
@@ -35,27 +38,133 @@ public class JeuModel {
 	public void setTourJoueur1(boolean tourJoueur1) {
 		this.tourJoueur1 = tourJoueur1;
 	}
-	public boolean isGrillePleine() {
-		for (int i = 0; i < grille.length; i++) {
-			for (int j = 0; j < grille[i].length; j++) {
-				if (grille[i][j] == 0) {
-					return false;
-				}
-			}
+	
+	public boolean isValidePlacer() {
+
+		if(pionJoueur1 >= 3 || pionJoueur2 >=3 ) {
+			return false;
 		}
 		return true;
 	}
-	public int[][] getGrille() {
-		return grille;
+	public void ajouterScore(int buttonId) {
+
+	    if (tourJoueur1) {
+	    	if(verifierScore == 0) {
+		        switch (buttonId) {
+		            case 1 -> {
+		            	scoreJoueur1 += 1;
+		            	verifierScore = 1;
+		            }
+		            case 2 -> {
+		                scoreJoueur1 += 2;
+		                verifierScore = 2;
+		            }
+		            case 3 -> {
+		                scoreJoueur1 += 3;
+		                verifierScore = 3;
+		            }
+		            case 4 -> {
+		                scoreJoueur1 += 4;
+		                verifierScore = 4;
+		            }
+		            case 5 -> {
+		                scoreJoueur1 += 5;
+		                verifierScore = 5;
+		            }
+		            case 6 -> {
+		                scoreJoueur1 += 6;
+		                verifierScore = 6;
+		            }
+		            case 7 -> {
+		                scoreJoueur1 += 7;
+		                verifierScore = 7;
+		            }
+		            case 8 -> {
+		                scoreJoueur1 += 8;
+		                verifierScore = 8;
+		            }
+		            case 9 -> {
+		                scoreJoueur1 += 9;
+		                verifierScore = 9;
+		            }
+		            default -> throw new IllegalArgumentException("Bouton invalide !");		      
+		        }
+		        
+		    }else {
+		        switch (buttonId) {
+	            case 1 -> {
+	            	scoreJoueur1 -= 1;
+	            	verifierScore -= 1;
+	            }
+	            case 2 -> {
+	                scoreJoueur1 -= 2;
+	                verifierScore -= 2;
+	            }
+	            case 3 -> {
+	                scoreJoueur1 -= 3;
+	                verifierScore -= 3;
+	            }
+	            case 4 -> {
+	                scoreJoueur1 -= 4;
+	                verifierScore -= 4;
+	            }
+	            case 5 -> {
+	                scoreJoueur1 -= 5;
+	                verifierScore -= 5;
+	            }
+	            case 6 -> {
+	                scoreJoueur1 -= 6;
+	                verifierScore -= 6;
+	            }
+	            case 7 -> {
+	                scoreJoueur1 -= 7;
+	                verifierScore -= 7;
+	            }
+	            case 8 -> {
+	                scoreJoueur1 -= 8;
+	                verifierScore -= 8;
+	            }
+	            case 9 -> {
+	                scoreJoueur1 -= 9;
+	                verifierScore -= 9;
+	            }
+	            default -> throw new IllegalArgumentException("Bouton invalide !");		      
+	        }
+            	
+            }
+	    } else {
+	        switch (buttonId) {
+	            case 1 -> scoreJoueur2 += 1;
+	            case 2 -> scoreJoueur2 += 2;
+	            case 3 -> scoreJoueur2 += 3;
+	            case 4 -> scoreJoueur2 += 4;
+	            case 5 -> scoreJoueur2 += 5;
+	            case 6 -> scoreJoueur2 += 6;
+	            case 7 -> scoreJoueur2 += 7;
+	            case 8 -> scoreJoueur2 += 8;
+	            case 9 -> scoreJoueur2 += 9;
+	            default -> throw new IllegalArgumentException("Bouton invalide !");
+	        }
+	    }
 	}
-	public void setGrille(int[][] grille) {
-		this.grille = grille;
+	public void calculScore() {
+		
 	}
-	// voir getter et setters
-	public int getCase(int x, int y) {
-		return grille[x][y];
+	
+	public void reset() {
+		scoreJoueur1 = 0;
+		scoreJoueur2 = 0;
+		tourJoueur1 = true;
+		pionJoueur1 = 0;
+		pionJoueur2 = 0;
 	}
-	public void setCase(int x, int y, int valeur) {
-		grille[x][y] = valeur;
+	
+	public void valider() {
+		if (tourJoueur1) {
+			tourJoueur1 = false;
+		} else {
+			tourJoueur1 = true;
+		}
+		
 	}
 }

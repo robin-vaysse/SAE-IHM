@@ -47,7 +47,7 @@ public class PauseController implements Initializable {
 
     @FXML
     private void cliquerBoutonParametre(ActionEvent event) {
-    	JeuDuQuinzeMain.activerFenetreParametres();
+    	JeuDuQuinzeMain.activerFenetreParametres("pause");
     }
 
     @FXML
@@ -57,11 +57,11 @@ public class PauseController implements Initializable {
 
     @FXML
     private void cliquerCommentJouer(ActionEvent event) {
-
+    	JeuDuQuinzeMain.activerFenetreExplication();
     }
 
     @FXML
     private void cliquerBoutonQuitter(ActionEvent event) {
-
+		System.exit(0);
     }
 }
