@@ -2,6 +2,8 @@ package application.controller;
 
 import java.io.IOException;
 import java.net.URL;
+
+import application.JeuDuQuinzeMain;
 import application.model.JeuModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -78,56 +80,63 @@ public class JeuController {
 	    @FXML
 	    private Label ScoreJoueur2;
 	    
-	    @FXML
-	    public void cliquerBouton1(ActionEvent event) {
-	        model.ajouterScore(1);
-	    }
 
-	    @FXML
-	    public void cliquerBouton2(ActionEvent event) {
-	        model.ajouterScore(2);
-	    }
-	    @FXML
-	    public void cliquerBouton3(ActionEvent event) {
-	        model.ajouterScore(3);
-	    }
 
-	    @FXML
-	    public void cliquerBouton4(ActionEvent event) {
-	        model.ajouterScore(4);
-	    }
-	    @FXML
-	    public void cliquerBouton5(ActionEvent event) {
-	        model.ajouterScore(5);
-	    }
+		
+		@FXML
+		public void cliquerBouton1(ActionEvent event) {
+		    model.ajouterScore(1);
+		}
+		
+		@FXML
+		public void cliquerBouton2(ActionEvent event) {
+		    model.ajouterScore(2);
+		}
+		
+		@FXML
+		public void cliquerBouton3(ActionEvent event) {
+		    model.ajouterScore(3);
+		}
+		
+		@FXML
+		public void cliquerBouton4(ActionEvent event) {
+		    model.ajouterScore(4);
+		}
+		
+		@FXML
+		public void cliquerBouton5(ActionEvent event) {
+		    model.ajouterScore(5);
+		}
+		
+		@FXML
+		public void cliquerBouton6(ActionEvent event) {
+		    model.ajouterScore(6);
+		}
+		
+		@FXML
+		public void cliquerBouton7(ActionEvent event) {
+		    model.ajouterScore(7);
+		}
+		
+		@FXML
+		public void cliquerBouton8(ActionEvent event) {
+		    model.ajouterScore(8);
+		}
+		
+		@FXML
+		public void cliquerBouton9(ActionEvent event) {
+		    model.ajouterScore(9);
+		}
 
-	    @FXML
-	    public void cliquerBouton6(ActionEvent event) {
-	        model.ajouterScore(6);
-	    }
-	    @FXML
-	    public void cliquerBouton7(ActionEvent event) {
-	        model.ajouterScore(7);
-	    }
-
-	    @FXML
-	    public void cliquerBouton8(ActionEvent event) {
-	        model.ajouterScore(8);
-	    }
-	    @FXML
-	    public void cliquerBouton9(ActionEvent event) {
-	        model.ajouterScore(9);
-	        
-	    }
 
 	    @FXML
 	    private void cliquerBoutonMenu(ActionEvent event) {
-
+			JeuDuQuinzeMain.activerFenetreMenu();
 	    }
 
 	    @FXML
 	    private void cliquerBoutonSauvegarder(ActionEvent event) {
-
+			//JeuDuQuinzeMain.activerFenetreSauvegarde();
 	    }
 
 	    @FXML
@@ -152,6 +161,12 @@ public class JeuController {
 	        ScoreJoueur1.setText(String.valueOf(model.getScoreJoueur1()));
 	        ScoreJoueur2.setText(String.valueOf(model.getScoreJoueur2()));
 	    }
+
+
+	    
+
+	    
+	    
 	    
 	    
 }

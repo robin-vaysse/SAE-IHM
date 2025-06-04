@@ -37,7 +37,7 @@ public class PauseController implements Initializable {
 
     @FXML
     private void cliquerContinuerLaPartie(ActionEvent event) {
-
+    	JeuDuQuinzeMain.activerFenetreJeu();
     }
 
     @FXML
