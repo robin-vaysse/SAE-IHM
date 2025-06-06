@@ -4,20 +4,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane styleClass="main-container" stylesheets="@../view/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SelectionModeJeuController">
+<StackPane styleClass="main-container-selectionModeJeu" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SelectionModeJeuController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" styleClass="anchor-pane">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" styleClass="anchor-pane-selectionModeJeu">
          <children>
-            <Rectangle arcHeight="40.0" arcWidth="40.0" height="670.0" layoutX="40.0" layoutY="40.0" styleClass="background-rectangle-outer" width="600.0" />
-            <Rectangle arcHeight="30.0" arcWidth="30.0" height="570.0" layoutX="102.0" layoutY="93.0" styleClass="background-rectangle-inner" width="500.0" />
-            <Button fx:id="boutonParametre" layoutX="377.0" layoutY="115.0" mnemonicParsing="false" onAction="#cliquerParametre" prefHeight="70.0" prefWidth="202.0" styleClass="bouton-parametre" text="Paramètres" />
-            <Rectangle arcHeight="45.0" arcWidth="45.0" height="123.0" layoutX="133.0" layoutY="225.0" styleClass="title-background" width="438.0" />
-            <Text layoutX="164.0" layoutY="298.0" styleClass="titre-principal" text="Choisissez un mode de jeu" />
-            <Button fx:id="boutonRetourArriere" layoutX="82.0" layoutY="65.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" styleClass="bouton-retour" text="🔙" />
-            <Button fx:id="boutonHumain_Humain" layoutX="250.0" layoutY="444.0" mnemonicParsing="false" onAction="#clicBoutonHumain_Humain" prefHeight="76.0" prefWidth="202.0" styleClass="bouton-mode-jeu" text="VS" />
+            <Rectangle arcHeight="40.0" arcWidth="40.0" height="670.0" layoutX="40.0" layoutY="40.0" styleClass="background-rectangle-outer-selectionModeJeu" width="600.0" />
+            <Rectangle arcHeight="30.0" arcWidth="30.0" height="570.0" layoutX="102.0" layoutY="93.0" styleClass="background-rectangle-inner-selectionModeJeu" width="500.0" />
+            <Button fx:id="boutonParametre" layoutX="377.0" layoutY="115.0" mnemonicParsing="false" onAction="#cliquerParametre" prefHeight="70.0" prefWidth="202.0" styleClass="bouton-parametre-selectionModeJeu" text="Paramètres" />
+            <Rectangle arcHeight="45.0" arcWidth="45.0" height="123.0" layoutX="133.0" layoutY="225.0" styleClass="title-background-selectionModeJeu" width="438.0" />
+            <Text layoutX="164.0" layoutY="298.0" styleClass="titre-principal-selectionModeJeu" text="Choisissez un mode de jeu" />
+            <Button fx:id="boutonRetourArriere" layoutX="82.0" layoutY="65.0" mnemonicParsing="false" onAction="#clicBoutonRetourArriere" prefHeight="90.0" prefWidth="90.0" styleClass="bouton-retour-selectionModeJeu" text="🔙" />
+            <Button fx:id="boutonHumain_Humain" layoutX="230.0" layoutY="444.0" mnemonicParsing="false" onAction="#clicBoutonHumain_Humain" prefHeight="76.0" prefWidth="242.0" styleClass="bouton-mode-jeu-selectionModeJeu" text="Jouer avec un ami" />
          </children>
       </AnchorPane>
    </children>

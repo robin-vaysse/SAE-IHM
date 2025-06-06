@@ -1,21 +1,27 @@
-/* styles.css */
+/* styles-claire-joyeux.css - Version joyeuse sans effets */
 .root {
-    -fx-couleur-fond:              #613D68;   /* */
-    -fx-couleur-fond2:             #895793;   /* */
-    -fx-couleur-fond-marron:       #b85839;   /* */
-    -fx-couleur-fond-marron2:      #c1694d;   /* */
-    -fx-couleur-bouton-violet:     #7f2148;   /* */
-    -fx-couleur-jeu:               #1f2937;   /* */
-    -fx-couleur-jeu-valider:       #13525B;   /* */
-    -fx-couleurjeu-bouton-texte:   #162d46;   /* */
-    -fx-couleur-texte:             #fbe3ad;   /* */
-    -fx-couleur-bordure:           #000000;   /* */
-    -fx-couleur-gris-fonce-jeu:    #142C45;   /* */
-    -fx-couleur-jeu-bouton:        #EFAB34;   /* */
-    -fx-couleur-tour-joueur-rouge: #EA5253;   /* */
-    -fx-couleur-bordure-tour-joueur-rouge:  #F34E47;   /* */
-    -fx-couleur-tour-joueur-bleu:  #4A93C8;   /* */
-    -fx-couleur-bordure-tour-joueur-bleu:  #559DD1;   /* */
+    -fx-couleur-fond:                       #E6F3FF;   /* Bleu clair joyeux pour le fond principal */
+    -fx-couleur-fond2:                      #E0F2E0;   /* Vert menthe joyeux */
+    -fx-couleur-fond-marron:                #FFF4E0;   /* Jaune crème joyeux */
+    -fx-couleur-fond-marron2:               #F7F7F7;   /* Blanc cassé */
+    -fx-couleur-bouton-violet:              #7B68EE;   /* Violet joyeux */
+    -fx-couleur-jeu:                        #FFFFFF;   /* Blanc pur pour le jeu */
+    -fx-couleur-jeu-valider:                #4CAF50;   /* Vert joyeux pour validation */
+    -fx-couleurjeu-bouton-texte:            #333333;   /* Gris foncé pour le texte */
+    -fx-couleur-texte:                      #2C3E50;   /* Bleu foncé pour le texte principal */
+    -fx-couleur-bordure:                    #9E9E9E;   /* Gris moyen pour les bordures */
+    -fx-couleur-blanc-pur:                  #FFFFFF;   /* Blanc pur */
+    -fx-couleur-gris-fonce-jeu:             #F8F9FA;   /* Gris très clair pour le jeu */
+    -fx-couleur-jeu-bouton:                 #FFD54F;   /* Jaune joyeux pour les boutons de jeu */
+    -fx-couleur-selection-pour-bouger:      #FF8A65;   /* Orange joyeux pour la sélection */
+    -fx-couleur-tour-joueur-rouge:          #E57373;   /* Rouge joyeux pour joueur 1 */
+    -fx-couleur-bordure-tour-joueur-rouge:  #D32F2F;   /* Rouge plus foncé pour bordure */
+    -fx-couleur-tour-joueur-bleu:           #64B5F6;   /* Bleu joyeux pour joueur 2 */
+    -fx-couleur-bordure-tour-joueur-bleu:   #1976D2;   /* Bleu plus foncé pour bordure */
+    -fx-couleur-case-changement:            #81C784;   /* Vert joyeux pour changement */
+    -fx-couleur-bordure-case-changement:    #388E3C;   /* Vert foncé pour bordure */
+    -fx-couleur-bouton-annuler:             #FFB74D;   /* Orange joyeux pour annuler */
+    -fx-couleur-bouton-annuler-hover:       #FF9800;   /* Orange plus foncé au survol */
 }
 
 .main-container-selectionModeJeu, .main-container-pause, .stackPaneParametrePartie, .main-container-Menu {
@@ -53,7 +59,7 @@
     -fx-border-width: 2;
     -fx-background-radius: 15;
     -fx-border-radius: 15;
-    -fx-text-fill: -fx-couleur-texte;
+    -fx-text-fill: -fx-couleur-blanc-pur;
     -fx-font-size: 28px;
 }
 
@@ -71,7 +77,7 @@
     -fx-border-color: -fx-couleur-bordure;
     -fx-border-radius: 3;
     -fx-border-width: 2;
-    -fx-text-fill: -fx-couleur-texte;
+    -fx-text-fill: -fx-couleur-blanc-pur;
     -fx-font-size: 24px;
 }
 
@@ -101,7 +107,7 @@
     -fx-stroke-type: inside;
 }
 
-.texteThemeParametrePartie, .texteCouleurElementParametrePartie, .texteImageFondParametrePartie, .texteFormeParametrePartie, .texteEmplacementStockageParametrePartie, .texteParametrePartie, .labelJeuDuQuinzeMenu {
+.texteThemeParametrePartie, .texteCouleurDesCasesParametrePartie, .texteFormeCaseParametrePartie, .texteTailleTexteParametrePartie, .texteParametrePartie, .labelJeuDuQuinzeMenu {
    -fx-fill: -fx-couleur-texte;
    -fx-text-fill: -fx-couleur-texte;
 }
@@ -120,7 +126,7 @@
    -fx-text-fill: -fx-couleur-texte;
 }
 
-.rectangleFondJeuParametrePartie, .fondBoutonCouleurElementParametrePartie, .fondBoutonFondParametrePartie, .fondBoutonFormeParametrePartie, .fondBoutonChangerEmplacementStockageParametrePartie {
+.rectangleFondJeuParametrePartie, .fondBoutonCaracteristiquesParametrePartie, .fondBoutonFondParametrePartie, .fondBoutonFormeParametrePartie, .fondBoutonChangerEmplacementStockageParametrePartie {
     -fx-fill: -fx-couleur-fond-marron2;
     -fx-stroke: -fx-couleur-bordure;
     -fx-stroke-type: inside;
@@ -155,15 +161,14 @@
 }
 
 .boutonCommencerAJouerMenu {
-    -fx-background-color: -fx-couleur-fond-marron;
+    -fx-background-color: -fx-couleur-bouton-violet;
     -fx-background-radius: 15;
     -fx-border-color: -fx-couleur-bordure;
     -fx-border-width: 2;
     -fx-border-radius: 15;
-    -fx-text-fill: -fx-couleur-texte;
+    -fx-text-fill: -fx-couleur-blanc-pur;
     -fx-font-size: 34px;
 }
-
 
 /********************************/
 /*********A**CENTRALISER*********/
@@ -176,8 +181,8 @@
 
 /* Plateau de jeu */
 .game-board-jeu {
-    -fx-fill: -fx-couleurjeu-bouton-texte;
-    -fx-stroke: BLACK;
+    -fx-fill: -fx-couleur-blanc-pur;
+    -fx-stroke: -fx-couleur-bordure;
 }
 
 /* Boutons du jeu */
@@ -209,7 +214,7 @@
     -fx-border-width: 2;
     -fx-background-radius: 15;
     -fx-border-radius: 15;
-    -fx-text-fill: -fx-couleur-texte;
+    -fx-text-fill: -fx-couleur-blanc-pur;
 }
 
 /* Bouton Valider */
@@ -217,7 +222,7 @@
     -fx-background-color: -fx-couleur-jeu-valider;
     -fx-border-color: -fx-couleur-bordure;
     -fx-border-radius: 3;
-    -fx-text-fill: -fx-couleur-texte;
+    -fx-text-fill: -fx-couleur-blanc-pur;
 }
 
 /* Bouton Démarrer */
@@ -226,8 +231,6 @@
     -fx-border-radius: 3;
     -fx-text-fill: -fx-couleur-texte;
 }
-
-
 
 /*Tests couleurs jeu*/
 
@@ -257,5 +260,38 @@
     -fx-text-fill: white;
 }
 
+.selectionne-pour-bouger {
+    -fx-background-color: -fx-couleur-selection-pour-bouger !important;
+    -fx-border-width: 3px !important;
+}
 
+/* déplacements */
+.disponible-pour-bouger {
+    -fx-background-color: -fx-couleur-case-changement !important;
+    -fx-border-color: -fx-couleur-bordure-case-changement !important;
+    -fx-border-width: 2px !important;
+}
 
+.instructions-label-jeu {
+    -fx-text-fill: -fx-couleur-texte;
+    -fx-font-weight: bold;
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+    -fx-border-color: -fx-couleur-bordure;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+}
+
+/* bouton annuler */
+.cancel-button-jeu {
+    -fx-background-color: -fx-couleur-bouton-annuler;
+    -fx-text-fill: -fx-couleur-blanc-pur;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.cancel-button-jeu:hover {
+    -fx-background-color: -fx-couleur-bouton-annuler-hover;
+}

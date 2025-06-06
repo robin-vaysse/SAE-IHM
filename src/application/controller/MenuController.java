@@ -48,6 +48,8 @@ public class MenuController {
      * Méthode appelée lorsque l'utilisateur clique sur le bouton "Plein écran".
      * Active ou désactive le mode plein écran.
      */
+    
+// Fonctionnalité en moins, voir pour le rajouter 
 //    @FXML
 //    private void cliquerBoutonPleinEcran(ActionEvent event) {
 //        JeuDuQuinzeMain.activerFenetreMenu().setFullScreen(!JeuDuQuinzeMain.activerFenetreMenu().isFullScreen());

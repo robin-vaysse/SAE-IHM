@@ -1,144 +1,275 @@
 package application;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
 import java.io.IOException;
-
+import application.manager.ParametresManager;
+import application.controller.JeuController;
 import application.controller.ParametresController;
+import application.manager.ThemeManager;
+import application.manager.SaveManager;
 
 /**
- * Classe principale de l'application "Jeu du Quinze".
- * Gère les différentes scènes et la fenêtre principale.
+ * Application principale du Jeu du Quinze.
+ * 
+ * Cette classe gère l'interface utilisateur et la navigation entre les différentes
+ * fenêtres du jeu (menu principal, jeu, paramètres, etc.).
+ * 
+ * @author Florian Helg
+ * @author Mattieu Liao
+ * @author Robin Vaysse
+ * @author Noé Rebourg
  */
 public class JeuDuQuinzeMain extends Application {
 
-    /** Scène principale de l'application */
+    // Constantes pour les dimensions de la fenêtre
+    private static final int LARGEUR_FENETRE = 680;
+    private static final int HAUTEUR_FENETRE = 750;
+
+    // Toutes les scènes de l'application
     private static Scene sceneAccueil;
-
-    /** Scène permettant de gérer le jeu */
     private static Scene sceneJeu;
-
-    /** Scène permettant de gérer la page des paramètres */
     private static Scene sceneParametres;
-
-    /** Scène permettant de gérer la page du menu */
     private static Scene sceneMenu;
-
-    /** Scène permettant de gérer la page du choix du jeu */
     private static Scene sceneMode;
-    
-    /** Scène permettant de gérer la page d'explication du jeu */
     private static Scene sceneExplication;
 
-    /**
-     * Fenêtre principale de l'application.
-     * La scène qui lui est associée sera modifiée en fonction des
-     * clics de l'utilisateur sur les boutons.
-     */
+    // Contrôleurs nécessaires pour communiquer avec les interfaces
+    private static JeuController jeuController;
+    private static ParametresController parametresController;
+
+    // Fenêtre principale de l'application
     private static Stage fenetreMenu;
 
     /**
-     * Permet de modifier la scène de la fenêtre principale
-     * pour qu'elle devienne celle de jeu.
+     * Point d'entrée de l'application JavaFX.
+     * Charge toutes les interfaces FXML et initialise les composants.
+     * 
+     * @param primaryStage la fenêtre principale fournie par JavaFX
+     * @throws IOException si une erreur casse les pieds au moment du chargement des fichiers FXML
      */
-    public static void activerFenetreJeu() {
-        fenetreMenu.setScene(sceneJeu);
-    }
-
-    /**
-     * Permet de modifier la scène de la fenêtre principale
-     * pour qu'elle devienne celle des paramètres.
-     */
-    public static void activerFenetreParametres(String origine) {
-		fenetreMenu.setScene(sceneParametres);
-    }
-
-    /**
-     * Permet de modifier la scène de la fenêtre principale
-     * pour qu'elle devienne celle du mode de jeu.
-     */
-    public static void activerFenetreMode() {
-        fenetreMenu.setScene(sceneMode);
-    }
-
-    /**
-     * Permet de modifier la scène de la fenêtre principale
-     * pour qu'elle devienne celle du menu.
-     */
-    public static void activerFenetreMenu() {
-        fenetreMenu.setScene(sceneMenu);
-    }
-
-    /**
-     * Permet de modifier la scène de la fenêtre principale
-     * pour qu'elle devienne la scène principale, celle qui permet d'accéder au jeu.
-     */
-    public static void activerPrincipale() {
-        fenetreMenu.setScene(sceneAccueil);
-    }
-    
-	public static void activerFenetreExplication() {
-		fenetreMenu.setScene(sceneExplication);
-	}
-
     @Override
     public void start(Stage primaryStage) throws IOException {
+        fenetreMenu = primaryStage;
+        
         try {
-            fenetreMenu = primaryStage;
+            // Chargement de toutes les interfaces
+            chargerToutesLesScenes();
             
-            // Debug: vérification des ressources
-            System.out.println("Chargement des ressources FXML...");
-            System.out.println("Menu: " + getClass().getResource("/application/view/menu.fxml"));
-            System.out.println("Jeu: " + getClass().getResource("/application/view/jeu.fxml"));
-            System.out.println("Paramètres: " + getClass().getResource("/application/view/parametrePartie.fxml"));
-            System.out.println("Mode: " + getClass().getResource("/application/view/selectionModeJeu.fxml"));
-            System.out.println("Pause: " + getClass().getResource("/application/view/pause.fxml"));
-            System.out.println("Explication: " + getClass().getResource("/application/view/commentJouer.fxml"));
-
-            /** Chargement de la scène d'accueil */
-            Parent accueilRoot = FXMLLoader.load(getClass().getResource("/application/view/menu.fxml"));
-            sceneAccueil = new Scene(accueilRoot, 680, 750);
-
-            /** Chargement de la scène de jeu */
-            Parent jeuRoot = FXMLLoader.load(getClass().getResource("/application/view/jeu.fxml"));
-            sceneJeu = new Scene(jeuRoot, 680, 750);
+            // Configuration des thèmes et paramètres
+            initialiserThemes();
             
-            /** Chargement de la scène de mode de jeu */
-            Parent modeRoot = FXMLLoader.load(getClass().getResource("/application/view/selectionModeJeu.fxml"));
-            sceneMode = new Scene(modeRoot, 680, 750);
+            // Configuration de la fenêtre principale
+            configurerFenetrePrincipale(primaryStage);
             
-            /** Chargement de la scène de menu (pause) */
-            Parent pauseRoot = FXMLLoader.load(getClass().getResource("/application/view/pause.fxml"));
-            sceneMenu = new Scene(pauseRoot, 680, 750);
+            // Vérification s'il y a une partie sauvegardée à reprendre
+            verifierPartieSauvegardee();
             
-            /** Chargement de la scène des paramètres */
-            Parent parametresRoot = FXMLLoader.load(getClass().getResource("/application/view/parametrePartie.fxml"));
-            sceneParametres = new Scene(parametresRoot, 680, 750);
-            
-            /** Chargement de la scène d'explication */
-            Parent explicationRoot = FXMLLoader.load(getClass().getResource("/application/view/commentJouer.fxml"));
-            sceneExplication = new Scene(explicationRoot, 680, 750);
-            
-            /** Configuration de la fenêtre principale */
-            primaryStage.setTitle("Jeu du Quinze");
-            primaryStage.setScene(sceneAccueil);
-            primaryStage.setWidth(680);
-            primaryStage.setHeight(750);
-            primaryStage.show();
-
-            System.out.println("Application démarrée avec succès!");
-
         } catch (Exception e) {
-            System.err.println("Erreur lors du chargement des ressources : " + e.getMessage());
+            System.err.println("Erreur lors de l'initialisation : " + e.getMessage());
             e.printStackTrace();
         }
     }
 
     /**
-     * Programme principal.
-     * @param args non utilisé
+     * Charge toutes les interfaces FXML et leurs contrôleurs associés.
+     * 
+     * @throws IOException si un fichier FXML n'est pas trouvé ou mal formé
+     */
+    private void chargerToutesLesScenes() throws IOException {
+        // Menu principal
+        Parent accueilRoot = FXMLLoader.load(getClass().getResource("/application/view/menu.fxml"));
+        sceneAccueil = new Scene(accueilRoot, LARGEUR_FENETRE, HAUTEUR_FENETRE);
+
+        // Interface de jeu (avec récupération du contrôleur)
+        FXMLLoader jeuLoader = new FXMLLoader(getClass().getResource("/application/view/jeu.fxml"));
+        Parent jeuRoot = jeuLoader.load();
+        jeuController = jeuLoader.getController();
+        sceneJeu = new Scene(jeuRoot, LARGEUR_FENETRE, HAUTEUR_FENETRE);
+        
+        // Sélection du mode de jeu
+        Parent modeRoot = FXMLLoader.load(getClass().getResource("/application/view/selectionModeJeu.fxml"));
+        sceneMode = new Scene(modeRoot, LARGEUR_FENETRE, HAUTEUR_FENETRE);
+        
+        // Menu pause
+        Parent pauseRoot = FXMLLoader.load(getClass().getResource("/application/view/pause.fxml"));
+        sceneMenu = new Scene(pauseRoot, LARGEUR_FENETRE, HAUTEUR_FENETRE);
+        
+        // Paramètres (avec récupération du contrôleur)
+        FXMLLoader parametresLoader = new FXMLLoader(getClass().getResource("/application/view/parametrePartie.fxml"));
+        Parent parametresRoot = parametresLoader.load();
+        parametresController = parametresLoader.getController();
+        sceneParametres = new Scene(parametresRoot, LARGEUR_FENETRE, HAUTEUR_FENETRE);
+        
+        // Règles du jeu
+        Parent explicationRoot = FXMLLoader.load(getClass().getResource("/application/view/commentJouer.fxml"));
+        sceneExplication = new Scene(explicationRoot, LARGEUR_FENETRE, HAUTEUR_FENETRE);
+    }
+
+    /**
+     * Initialise le système de thèmes pour toutes les scènes.
+     */
+    private void initialiserThemes() {
+        ThemeManager.initializeWithAllScenes();
+    }
+
+    /**
+     * Configure la fenêtre principale avec son titre et sa scène d'accueil.
+     * 
+     * @param primaryStage la fenêtre à configurer
+     */
+    private void configurerFenetrePrincipale(Stage primaryStage) {
+        primaryStage.setTitle("Jeu du Quinze");
+        primaryStage.setScene(sceneAccueil);
+        primaryStage.setWidth(LARGEUR_FENETRE);
+        primaryStage.setHeight(HAUTEUR_FENETRE);
+        primaryStage.show();
+    }
+
+    /**
+     * Vérifie s'il existe une partie sauvegardée et propose de la reprendre.
+     */
+    private void verifierPartieSauvegardee() {
+        if (SaveManager.promptContinueGame()) {
+            chargerPartieSauvegardee();
+        }
+    }
+
+    /**
+     * Applique les paramètres de personnalisation (thème, etc.) à une scène.
+     * Cette méthode est appelée à chaque changement de scène.
+     * 
+     * @param scene la scène à personnaliser
+     */
+    private static void appliquerParametres(Scene scene) {
+        if (scene != null) {
+            ParametresManager.getInstance().applyToScene(scene);
+        }
+    }
+
+    // ========== MÉTHODES DE NAVIGATION ==========
+
+    /**
+     * Passe à l'interface de jeu sans noms de joueurs spécifiés.
+     */
+    public static void activerFenetreJeu() {
+        changerScene(sceneJeu);
+    }
+
+    /**
+     * Passe à l'interface de jeu avec les noms des joueurs.
+     * 
+     * @param nomJoueur1 nom du premier joueur
+     * @param nomJoueur2 nom du second joueur
+     */
+    public static void activerFenetreJeu(String nomJoueur1, String nomJoueur2) {
+        if (jeuController != null) {
+            jeuController.setNomsJoueurs(nomJoueur1, nomJoueur2);
+        }
+        changerScene(sceneJeu);
+    }
+
+    /**
+     * Passe à l'interface des paramètres.
+     * 
+     * @param origine indique d'où vient l'utilisateur (pour le bouton retour)
+     */
+    public static void activerFenetreParametres(String origine) {
+        if (parametresController != null) {
+            parametresController.setOrigine(origine);
+        }
+        changerScene(sceneParametres);
+    }
+
+    /**
+     * Passe à l'interface de sélection du mode de jeu.
+     */
+    public static void activerFenetreMode() {
+        changerScene(sceneMode);
+    }
+
+    /**
+     * Passe au menu de pause.
+     */
+    public static void activerFenetreMenu() {
+        changerScene(sceneMenu);
+    }
+
+    /**
+     * Retourne au menu principal.
+     */
+    public static void activerPrincipale() {
+        changerScene(sceneAccueil);
+    }
+
+    /**
+     * Passe à l'interface d'explication des règles.
+     */
+    public static void activerFenetreExplication() {
+        changerScene(sceneExplication);
+    }
+
+    /**
+     * Méthode utilitaire pour changer de scène.
+     * Applique automatiquement le thème et les paramètres.
+     * 
+     * @param nouvelleScene la scène vers laquelle naviguer
+     */
+    private static void changerScene(Scene nouvelleScene) {
+        ThemeManager.applyThemeOnSceneActivation(nouvelleScene);
+        appliquerParametres(nouvelleScene);
+        fenetreMenu.setScene(nouvelleScene);
+    }
+
+    // ========== GESTION DES SAUVEGARDES ==========
+
+    /**
+     * Charge et reprend une partie sauvegardée.
+     */
+    public static void chargerPartieSauvegardee() {
+        if (SaveManager.hasSavedGame()) {
+            SaveManager.SavedGame save = SaveManager.loadGame();
+            if (save != null) {
+                activerFenetreJeu(save.nomJoueur1, save.nomJoueur2);
+                jeuController.chargerPartie();
+            }
+        }
+    }
+
+    // ========== GETTERS POUR LE THEMEMANAGER ==========
+    // Ces méthodes sont nécessaires pour que le ThemeManager puisse accéder aux scènes
+
+    public static Scene getSceneAccueil() { 
+        return sceneAccueil; 
+    }
+
+    public static Scene getSceneJeu() { 
+        return sceneJeu; 
+    }
+
+    public static Scene getSceneParametres() { 
+        return sceneParametres; 
+    }
+
+    public static Scene getSceneMenu() { 
+        return sceneMenu; 
+    }
+
+    public static Scene getSceneMode() { 
+        return sceneMode; 
+    }
+
+    public static Scene getSceneExplication() { 
+        return sceneExplication; 
+    }
+
+    /**
+     * Point d'entrée du programme.
+     * 
+     * @param args arguments de la ligne de commande (non utilisés)
      */
     public static void main(String[] args) {
         launch(args);

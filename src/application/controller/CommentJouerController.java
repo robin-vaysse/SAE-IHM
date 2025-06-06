@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
 import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.util.Arrays;

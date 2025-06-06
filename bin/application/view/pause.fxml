@@ -9,54 +9,166 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane style="-fx-background-color: #613D68;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PauseController">
-   <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="680.0" style="-fx-background-color: #613D68;">
-         <children>
-            <Button layoutX="283.0" layoutY="602.0" mnemonicParsing="false" style="-fx-background-color: #BB593B; -fx-border-radius: 3;" text="Démarrer" textFill="#fbe3ad">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#895793" height="670.0" layoutX="66.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="550.0" />
-            <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#7f2148" height="114.0" layoutX="143.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" width="395.0" />
-            <Text fill="#fbe3ad" layoutX="180.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu de la partie" wrappingWidth="316.627685546875">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Text>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#b85839" height="450.0" layoutX="116.0" layoutY="233.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
-            <Button fx:id="boutonContinuerLaPartie" layoutX="143.0" layoutY="261.0" mnemonicParsing="false" onAction="#cliquerContinuerLaPartie" prefHeight="80.0" prefWidth="180.0" style="-fx-background-color: C1694D; -fx-border-color: #46433c; -fx-border-radius: 10; -fx-background-radius: 10;" text="Continuer       la partie" textAlignment="RIGHT" textFill="#fbe3ad" wrapText="true">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button fx:id="boutonQuitter" alignment="CENTER_RIGHT" layoutX="358.0" layoutY="562.0" mnemonicParsing="false" onAction="#cliquerBoutonQuitter" prefHeight="80.0" prefWidth="180.0" style="-fx-background-color: C1694D; -fx-border-color: #46433c; -fx-border-radius: 10; -fx-background-radius: 10;" text="Quitter" textFill="#fbe3ad" wrapText="true">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button fx:id="boutonCommentJouer" alignment="CENTER_RIGHT" layoutX="143.0" layoutY="562.0" mnemonicParsing="false" onAction="#cliquerCommentJouer" prefHeight="80.0" prefWidth="180.0" style="-fx-background-color: C1694D; -fx-border-color: #46433c; -fx-border-radius: 10; -fx-background-radius: 10;" text="Comment      jouer ?" textAlignment="RIGHT" textFill="#fbe3ad" wrapText="true">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button fx:id="boutonParamètre" alignment="CENTER_RIGHT" layoutX="143.0" layoutY="415.0" mnemonicParsing="false" onAction="#cliquerBoutonParametre" prefHeight="80.0" prefWidth="180.0" style="-fx-background-color: C1694D; -fx-border-color: #46433c; -fx-border-radius: 10; -fx-background-radius: 10;" text="Paramètres" textFill="#fbe3ad" wrapText="true">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button fx:id="boutonNouvellePartie" layoutX="358.0" layoutY="415.0" mnemonicParsing="false" onAction="#cliquerNouvellePartie" prefHeight="80.0" prefWidth="180.0" style="-fx-background-color: C1694D; -fx-border-color: #46433c; -fx-border-radius: 10; -fx-background-radius: 10;" text="       Nouvelle Partie" textAlignment="RIGHT" textFill="#fbe3ad" wrapText="true">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button fx:id="boutonSauvegarder" alignment="CENTER_RIGHT" layoutX="358.0" layoutY="261.0" mnemonicParsing="false" onAction="#cliquerSauvegarder" prefHeight="80.0" prefWidth="180.0" style="-fx-background-color: C1694D; -fx-border-color: #46433c; -fx-border-radius: 10; -fx-background-radius: 10;" text="Sauvegarder" textAlignment="RIGHT" textFill="#fbe3ad" wrapText="true">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </children>
+<StackPane styleClass="main-container-pause"
+           xmlns="http://javafx.com/javafx/23.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="application.controller.PauseController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" 
+                    maxWidth="-Infinity"
+                    minHeight="-Infinity" 
+                    minWidth="-Infinity" 
+                    prefHeight="750.0"
+                    prefWidth="680.0" 
+                    styleClass="anchor-pane-pause">
+            <children>
+                <Button layoutX="283.0" 
+                        layoutY="602.0"
+                        mnemonicParsing="false" 
+                        styleClass="bouton-demarrer-pause"
+                        text="Démarrer">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                
+                <Rectangle arcHeight="40.0" 
+                           arcWidth="40.0" 
+                           height="670.0"
+                           layoutX="66.0" 
+                           layoutY="40.0" 
+                           strokeType="INSIDE" 
+                           width="550.0"
+                           styleClass="rectangle-principal-pause" />
+                
+                <Rectangle arcHeight="40.0" 
+                           arcWidth="40.0" 
+                           height="114.0"
+                           layoutX="143.0" 
+                           layoutY="82.0" 
+                           strokeType="INSIDE" 
+                           width="395.0"
+                           styleClass="rectangle-titre-pause" />
+                
+                <Text layoutX="180.0" 
+                      layoutY="155.0" 
+                      strokeType="OUTSIDE"
+                      strokeWidth="0.0" 
+                      text="Menu de la partie"
+                      wrappingWidth="316.627685546875" 
+                      styleClass="titre-menu-pause">
+                    <font>
+                        <Font size="40.0" />
+                    </font>
+                </Text>
+                
+                <Rectangle arcHeight="30.0" 
+                           arcWidth="30.0" 
+                           height="450.0"
+                           layoutX="116.0" 
+                           layoutY="233.0" 
+                           strokeType="INSIDE" 
+                           width="450.0"
+                           styleClass="rectangle-boutons-pause" />
+                
+                <Button fx:id="boutonContinuerLaPartie" 
+                        layoutX="143.0"
+                        layoutY="261.0" 
+                        mnemonicParsing="false"
+                        onAction="#cliquerContinuerLaPartie" 
+                        prefHeight="80.0"
+                        prefWidth="180.0" 
+                        styleClass="bouton-continuer-pause"
+                        text="Continuer la partie" 
+                        textAlignment="RIGHT" 
+                        wrapText="true">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Button>
+                
+                <Button fx:id="boutonSauvegarder" 
+                        alignment="CENTER_RIGHT" 
+                        layoutX="358.0" 
+                        layoutY="261.0" 
+                        mnemonicParsing="false" 
+                        onAction="#cliquerSauvegarder" 
+                        prefHeight="80.0" 
+                        prefWidth="180.0" 
+                        styleClass="bouton-sauvegarder-pause" 
+                        text="Sauvegarder" 
+                        textAlignment="RIGHT" 
+                        wrapText="true">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Button>
+                
+                <Button fx:id="boutonParamètre" 
+                        alignment="CENTER_RIGHT"
+                        layoutX="143.0" 
+                        layoutY="415.0" 
+                        mnemonicParsing="false"
+                        onAction="#cliquerBoutonParametre" 
+                        prefHeight="80.0"
+                        prefWidth="180.0" 
+                        styleClass="bouton-parametre-pause"
+                        text="Paramètres" 
+                        wrapText="true">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Button>
+                
+                <Button fx:id="boutonNouvellePartie" 
+                        layoutX="358.0"
+                        layoutY="415.0" 
+                        mnemonicParsing="false"
+                        onAction="#cliquerNouvellePartie" 
+                        prefHeight="80.0"
+                        prefWidth="180.0" 
+                        styleClass="bouton-nouvelle-partie-pause"
+                        text=" Nouvelle Partie" 
+                        textAlignment="RIGHT" 
+                        wrapText="true">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Button>
+                
+                <Button fx:id="boutonCommentJouer" 
+                        alignment="CENTER_RIGHT"
+                        layoutX="143.0" 
+                        layoutY="562.0" 
+                        mnemonicParsing="false"
+                        onAction="#cliquerCommentJouer" 
+                        prefHeight="80.0" 
+                        prefWidth="180.0"
+                        styleClass="bouton-comment-jouer-pause" 
+                        text="Comment jouer ?"
+                        textAlignment="RIGHT" 
+                        wrapText="true">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Button>
+                
+                <Button fx:id="boutonQuitter" 
+                        alignment="CENTER_RIGHT"
+                        layoutX="358.0" 
+                        layoutY="562.0" 
+                        mnemonicParsing="false"
+                        onAction="#cliquerBoutonQuitter" 
+                        prefHeight="80.0"
+                        prefWidth="180.0" 
+                        styleClass="bouton-quitter-pause" 
+                        text="Quitter"
+                        wrapText="true">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Button>               
+            </children>
+        </AnchorPane>
+    </children>
 </StackPane>

@@ -1,305 +1,199 @@
-
 package application.model;
 
 import application.controller.JeuController;
+import java.util.Random;
 
-/**
- * La classe `JeuModel` représente la logique et l'état du jeu.
- * Elle gère les scores, les tours des joueurs, l'état des boutons et les règles du jeu.
- */
+// Classe qui gère la logique du jeu
 public class JeuModel {
 
-    /** Score du joueur 1 */
     private int scoreJoueur1;
-
-    /** Score du joueur 2 */
     private int scoreJoueur2;
-     
-    /** Score de vérification du joueur 1*/
     private int scoreJoueur1Check;
-
-    /** Score de vérification du joueur 2*/
     private int scoreJoueur2Check;
-
-    /** Indique si c'est le tour du joueur 1 ou non */
     private boolean tourJoueur1;
-
-    /** Nombre de pions placés par le joueur 1 */
     private int pionJoueur1 = 0;
-
-    /**
-     * Nombre de pions placés par le joueur 2.
-     */
+    private int compteurJoueur1 = 0;
+    private int compteurJoueur2 = 0;
+    private boolean jeuTermine = false;
     private int pionJoueur2 = 0;
-
-    /** Tableau représentant les boutons cliqués par le joueur 1 */
     private boolean[] boutonsCliquesJoueur1 = new boolean[9];
-
-    /** Tableau représentant les boutons cliqués par le joueur 2 */
     private boolean[] boutonsCliquesJoueur2 = new boolean[9];
-
-    /** Indique si un bouton a été cliqué lors du tour actuel */
     boolean boutonsCliquer = false;
-
-    /**
-     * Identifiant du dernier bouton cliqué.
-     * Utilisé pour gérer les actions liées au bouton précédent.
-     */
     private int valeurPrecedente = 0;
+    private boolean modeDeplacement = false;
+    private int pionADeplacer = 0;
 
-
-    /**
-     * Constructeur de la classe `JeuModel` qui initialise l'état du jeu.
-     */
     public JeuModel() {
         reset();
     }
 
-    /**
-     * Retourne le score du joueur 1.
-     * @return le score du joueur 1
-     */
     public int getScoreJoueur1() {
         return scoreJoueur1;
     }
 
-    /**
-     * Retourne le score du joueur 2.
-     * @return le score du joueur 2
-     */
     public int getScoreJoueur2() {
         return scoreJoueur2;
     }
-
-    /**
-     * Vérifie si c'est le tour du joueur 1.
-     * @return `true` si c'est le tour du joueur 1, `false` sinon
-     */
 
     public boolean isTourJoueur1() {
         return tourJoueur1;
     }
 
-
-    /**
-     * Valide si un joueur peut placer un pion.
-     * @return `true` si le placement est valide
-     * @throws IllegalStateException si un joueur tente de placer plus de 3 pions
-     */
-    public void isValidePlacer(int buttonId, boolean joueur1) {
-		if (joueur1 && pionJoueur1 >= 3) {
-			changerBoutonClique(buttonId, joueur1);
-		} else if (!joueur1 && pionJoueur2 >= 3) {
-			changerBoutonClique(buttonId, !joueur1);
-		}
-
+    public boolean isModeDeplacement() {
+        return modeDeplacement;
     }
 
-    /**
-     * Modifie le score en fonction du bouton cliqué et du joueur actuel.
-     * @param buttonId l'identifiant du bouton cliqué
-     * @param ajouter  `true` pour ajouter au score, `false` pour le soustraire
-     */
-    private void modifierScore(int buttonId, boolean ajouter) {
-        int valeur = switch (buttonId) {
-            case 1 -> 1;
-            case 2 -> 2;
-            case 3 -> 3;
-            case 4 -> 4;
-            case 5 -> 5;
-            case 6 -> 6;
-            case 7 -> 7;
-            case 8 -> 8;
-            case 9 -> 9;
-            default -> throw new IllegalArgumentException("Bouton invalide !");
-        };
+    public int getPionADeplacer() {
+        return pionADeplacer;
+    }
 
-        if (ajouter) {
+    public boolean lesDeuxJoueursOnt3Pions() {
+        return pionJoueur1 >= 3 && pionJoueur2 >= 3;
+    }
+
+    public void isValidePlacer(int buttonId, boolean joueur1) {
+        // méthode pour validation
+    }
+
+    // Modifie le score selon le bouton cliqué
+    private void modifierScore(int buttonId, boolean joueur1) {
+        int valeur = buttonId; // simple, l'id du bouton = sa valeur
+
+        if (joueur1) {
             if (boutonsCliquer && valeurPrecedente != 0) {
                 unsetBouttonCliqueJoueur(valeurPrecedente, true);
-                scoreJoueur1 -= switch (valeurPrecedente) {
-                    case 1 -> 1;
-                    case 2 -> 2;
-                    case 3 -> 3;
-                    case 4 -> 4;
-                    case 5 -> 5;
-                    case 6 -> 6;
-                    case 7 -> 7;
-                    case 8 -> 8;
-                    case 9 -> 9;
-                    default -> 0;
-                };
+                scoreJoueur1 -= valeurPrecedente;
             }
-            setBouttonCliqueJoueur(buttonId, true);
             scoreJoueur1 += valeur;
             valeurPrecedente = buttonId;
         } else {
             if (boutonsCliquer && valeurPrecedente != 0) {
                 unsetBouttonCliqueJoueur(valeurPrecedente, false);
-                scoreJoueur2 -= switch (valeurPrecedente) {
-                    case 1 -> 1;
-                    case 2 -> 2;
-                    case 3 -> 3;
-                    case 4 -> 4;
-                    case 5 -> 5;
-                    case 6 -> 6;
-                    case 7 -> 7;
-                    case 8 -> 8;
-                    case 9 -> 9;
-                    default -> 0;
-                };
+                scoreJoueur2 -= valeurPrecedente;
             }
-			if (pionJoueur2 <= 3) {
-				setBouttonCliqueJoueur(buttonId, false);
-	            scoreJoueur2 += valeur;
-	            valeurPrecedente = buttonId;
-			} else {
-				throw new IllegalStateException("Le joueur 2 ne peut pas placer plus de 3 pions !");
-			}
-			
-			if (pionJoueur1 <= 3) {
-				setBouttonCliqueJoueur(buttonId, true);
-				scoreJoueur1 += valeur;
-				valeurPrecedente = buttonId;
-			} else {
-				throw new IllegalStateException("Le joueur 1 ne peut pas placer plus de 3 pions !");
-			}
-
+            scoreJoueur2 += valeur;
+            valeurPrecedente = buttonId;
         }
         boutonsCliquer = true;
     }
 
-    /**
-     * Ajoute le score pour l'identifiant de bouton spécifié.
-     * @param buttonId l'identifiant du bouton cliqué
-     */
-    public void ajouterScore(int buttonId) {
-        if (tourJoueur1) {
-            verificationBouttonClique(buttonId, true);
-            modifierScore(buttonId, true);
+    // Gère le déplacement des pions
+    private void gererDeplacementPion(int buttonId) {
+        // Vérifie si le joueur peut encore déplacer
+        if ((tourJoueur1 && compteurJoueur1 >= 10) || (!tourJoueur1 && compteurJoueur2 >= 10)) {
+            throw new IllegalStateException("Plus de déplacements possibles !");
+        }
+        
+        if (pionADeplacer == 0) {
+            // Sélectionner un pion
+            if (isBouttonCliquer(buttonId, tourJoueur1)) {
+                pionADeplacer = buttonId;
+            } else {
+                throw new IllegalStateException("Sélectionnez un de vos pions !");
+            }
         } else {
-            verificationBouttonClique(buttonId, false);
-            modifierScore(buttonId, false);
+            // Déplacer vers une case libre
+            if (boutonsCliquesJoueur1[buttonId - 1] || boutonsCliquesJoueur2[buttonId - 1]) {
+                throw new IllegalStateException("Case déjà occupée !");
+            }
+            
+            // Faire le déplacement
+            unsetBouttonCliqueJoueur(pionADeplacer, tourJoueur1);
+            setBouttonCliqueJoueur(buttonId, tourJoueur1);
+            
+            // Mettre à jour le score
+            int ancienneValeur = pionADeplacer;
+            int nouvelleValeur = buttonId;
+            
+            if (tourJoueur1) {
+                scoreJoueur1 = scoreJoueur1 - ancienneValeur + nouvelleValeur;
+                compteurJoueur1++;
+                if (scoreJoueur1 == 15) {
+                    jeuTermine = true;
+                    return;
+                }
+            } else {
+                scoreJoueur2 = scoreJoueur2 - ancienneValeur + nouvelleValeur;
+                compteurJoueur2++; 
+                if (scoreJoueur2 == 15) {
+                    jeuTermine = true;
+                    return; 
+                }
+            }
+            
+            pionADeplacer = 0;
+            tourJoueur1 = !tourJoueur1;
+        }
+    }
+    
+    public void ajouterScore(int buttonId) {
+        if (lesDeuxJoueursOnt3Pions()) {
+            modeDeplacement = true;
+            gererDeplacementPion(buttonId);
+        } else {
+            verificationBouttonClique(buttonId, tourJoueur1);
+            modifierScore(buttonId, tourJoueur1);
         }
     }
 
-    /**
-     * Calcule le score et vérifie les conditions de victoire.
-     */
     public void calculScore() {
-        if (scoreJoueur1 == 15) {
-            // Logique pour la victoire du joueur 1
+        // Vérifier si quelqu'un a gagné
+        if (scoreJoueur1 == 15 || scoreJoueur2 == 15) {
+            jeuTermine = true;
         }
-
-        if (scoreJoueur2 == 15) {
-            // Logique pour la victoire du joueur 2
+        
+        // Vérifier si plus de déplacements possibles
+        if (modeDeplacement && compteurJoueur1 >= 10 && compteurJoueur2 >= 10) {
+            jeuTermine = true;
         }
     }
 
-    /**
-     * Réinitialise l'état du jeu à ses valeurs initiales.
-     */
+    // Remet tout à zéro
     public void reset() {
         scoreJoueur1 = 0;
         scoreJoueur2 = 0;
-        tourJoueur1 = true;
+        Random random = new Random();
+        tourJoueur1 = random.nextBoolean();
         pionJoueur1 = 0;
         pionJoueur2 = 0;
         scoreJoueur1Check = -1;
         scoreJoueur2Check = -1;
+        modeDeplacement = false;
+        pionADeplacer = 0;
+        valeurPrecedente = 0;
+        boutonsCliquer = false;
+        compteurJoueur1 = 0;
+        compteurJoueur2 = 0;
+        jeuTermine = false;
         
         for (int i = 0; i < boutonsCliquesJoueur1.length; i++) {
             boutonsCliquesJoueur1[i] = false;
             boutonsCliquesJoueur2[i] = false;
         }
     }
-
-
-	/**
-	 * Valide le tour actuel et passe au joueur suivant.
-	 */
-	public void valider() {
-	    if (tourJoueur1 && scoreJoueur1 != scoreJoueur1Check) {
-	        tourJoueur1 = false;
-	        pionJoueur1++;
-	        scoreJoueur1Check = scoreJoueur1;
-	    } else if (!tourJoueur1 && scoreJoueur2 != scoreJoueur2Check) {
-	        tourJoueur1 = true;
-	        pionJoueur2++;
-	        scoreJoueur2Check = scoreJoueur2;
-	    }
-	    valeurPrecedente = 0;
-	}
-
-
-    /**
-     * Vérifie si un bouton a été cliqué par un joueur spécifique.
-     * @param buttonId l'identifiant du bouton
-     * @param joueur1  `true` pour le joueur 1, `false` pour le joueur 2
-     * @return `true` si le bouton a été cliqué, `false` sinon
-     */
+    
     public boolean isBouttonCliquer(int buttonId, boolean joueur1) {
-        return switch (buttonId) {
-            case 1 -> boutonsCliquesJoueur1[0];
-            case 2 -> boutonsCliquesJoueur1[1];
-            case 3 -> boutonsCliquesJoueur1[2];
-            case 4 -> boutonsCliquesJoueur1[3];
-            case 5 -> boutonsCliquesJoueur1[4];
-            case 6 -> boutonsCliquesJoueur1[5];
-            case 7 -> boutonsCliquesJoueur1[6];
-            case 8 -> boutonsCliquesJoueur1[7];
-            case 9 -> boutonsCliquesJoueur1[8];
-            default -> throw new IllegalArgumentException("Bouton invalide !");
-        };
-    }
-
-    /**
-     * Vérifie si un bouton peut être cliqué par un joueur spécifique.
-     * @param buttonId l'identifiant du bouton
-     * @param joueur1  `true` pour le joueur 1, `false` pour le joueur 2
-     * @throws IllegalStateException si le bouton a déjà été cliqué
-     */
-    public void verificationBouttonClique(int buttonId, boolean joueur1) {
         if (joueur1) {
-            if (boutonsCliquesJoueur1[buttonId - 1]) {
-                throw new IllegalStateException("Ce bouton a déjà été cliqué par le joueur 1 !");
-            }
-            if (boutonsCliquesJoueur2[buttonId - 1]) {
-                throw new IllegalStateException("Ce bouton a déjà été cliqué par le joueur 2 !");
-            }
+            return boutonsCliquesJoueur1[buttonId - 1];
         } else {
-            if (boutonsCliquesJoueur2[buttonId - 1]) {
-                throw new IllegalStateException("Ce bouton a déjà été cliqué par le joueur 2 !");
-            }
-            if (boutonsCliquesJoueur1[buttonId - 1]) {
-                throw new IllegalStateException("Ce bouton a déjà été cliqué par le joueur 1 !");
-            }
+            return boutonsCliquesJoueur2[buttonId - 1];
         }
     }
 
-    /**
-     * Définit l'état d'un bouton comme cliqué pour un joueur spécifique.
-     * @param buttonId l'identifiant du bouton
-     * @param joueur1  `true` pour le joueur 1, `false` pour le joueur 2
-     */
+    public void verificationBouttonClique(int buttonId, boolean joueur1) {
+        if (boutonsCliquesJoueur1[buttonId - 1] || boutonsCliquesJoueur2[buttonId - 1]) {
+            throw new IllegalStateException("Bouton déjà utilisé !");
+        }
+    }
+
     public void setBouttonCliqueJoueur(int buttonId, boolean joueur1) {
-        verificationBouttonClique(buttonId, joueur1);
-        
-        if (pionJoueur1 <= 3 || pionJoueur2 <= 3) {
-            if (joueur1) {
-            	boutonsCliquesJoueur1[buttonId - 1] = true;
-	        } else {
-	        	boutonsCliquesJoueur2[buttonId - 1] = true;
-	        }
+        if (joueur1) {
+            boutonsCliquesJoueur1[buttonId - 1] = true;
+        } else {
+            boutonsCliquesJoueur2[buttonId - 1] = true;
         }
-        
     }
 
-    /**
-     * Réinitialise l'état d'un bouton comme non cliqué pour un joueur spécifique.
-     * @param buttonId l'identifiant du bouton
-     * @param joueur1  `true` pour le joueur 1, `false` pour le joueur 2
-     */
     public void unsetBouttonCliqueJoueur(int buttonId, boolean joueur1) {
         if (joueur1) {
             boutonsCliquesJoueur1[buttonId - 1] = false;
@@ -308,12 +202,92 @@ public class JeuModel {
         }
     }
     
-	public void changerBoutonClique(int buttonId, boolean joueur1) {
-		if (joueur1) {
-			unsetBouttonCliqueJoueur(buttonId, joueur1);
-		} else {
-			unsetBouttonCliqueJoueur(buttonId, !joueur1);
-		}
-	}
-	
+    public void changerBoutonClique(int buttonId, boolean joueur1) {
+        if (joueur1) {
+            unsetBouttonCliqueJoueur(buttonId, joueur1);
+        } else {
+            unsetBouttonCliqueJoueur(buttonId, !joueur1);
+        }
+    }
+    
+    public int getBoutonSelectionne() {
+        return valeurPrecedente;
+    }
+    
+    public int getCompteurJoueur1() {
+        return compteurJoueur1;
+    }
+
+    public int getCompteurJoueur2() {
+        return compteurJoueur2;
+    }
+
+    public boolean isCompteurEpuise() {
+        return (10 - compteurJoueur1) <= 0 && (10 - compteurJoueur2) <= 0;
+    }
+     
+    public String determinerResultatFinal(String nomJoueur1, String nomJoueur2) {
+        int distanceJoueur1 = Math.abs(15 - scoreJoueur1);
+        int distanceJoueur2 = Math.abs(15 - scoreJoueur2);
+        
+        if (distanceJoueur1 < distanceJoueur2) {
+            return nomJoueur1 + " gagne ! (Plus proche de 15)";
+        } else if (distanceJoueur2 < distanceJoueur1) {
+            return nomJoueur2 + " gagne ! (Plus proche de 15)";
+        } else {
+            return "Match nul !";
+        }
+    }
+    
+    public boolean isJeuTermine() {
+        return jeuTermine;
+    }
+
+    public void annulerSelectionDeplacement() {
+        if (pionADeplacer != 0) {
+            pionADeplacer = 0;
+        }
+    }
+
+    public void valider() {
+        if (modeDeplacement) {
+            if (pionADeplacer != 0) {
+                throw new IllegalStateException("Terminez le déplacement en cours !");
+            }
+        } else {
+            // Mode placement
+            if (tourJoueur1 && scoreJoueur1 != scoreJoueur1Check) {
+                if (pionJoueur1 < 3) {
+                    tourJoueur1 = false;
+                    pionJoueur1++;
+                    scoreJoueur1Check = scoreJoueur1;
+                    
+                    if (scoreJoueur1 == 15) {
+                        jeuTermine = true;
+                    }
+                } else {
+                    throw new IllegalStateException("Joueur 1 ne peut plus placer de pions !");
+                }
+            } else if (!tourJoueur1 && scoreJoueur2 != scoreJoueur2Check) {
+                if (pionJoueur2 < 3) {
+                	tourJoueur1 = true;
+                    pionJoueur2++;
+                    scoreJoueur2Check = scoreJoueur2;
+                    
+                    if (scoreJoueur2 == 15) {
+                        jeuTermine = true;
+                    }
+                } else {
+                    throw new IllegalStateException("Joueur 2 ne peut plus placer de pions !");
+                }
+            }
+        }
+        
+        if (modeDeplacement && compteurJoueur1 >= 10 && compteurJoueur2 >= 10) {
+            jeuTermine = true;
+        }
+        
+        valeurPrecedente = 0;
+        boutonsCliquer = false;
+    }
 }
